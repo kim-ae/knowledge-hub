@@ -1,36 +1,79 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Kim7s Knowledge Hub - Next.js Rewrite
+
+This project is a rewrite of the Kim7s Knowledge Hub using Next.js, TypeScript, and Tailwind CSS. It dynamically loads content from a Markdown file.
+
+## Features
+
+- **Dynamic Content**: Articles and categories are parsed from a Markdown file.
+- **Responsive Design**: Modern UI built with Tailwind CSS, supporting mobile and desktop.
+- **Next.js App Router**: Uses Server Components for efficient data fetching.
+- **Docker Ready**: Includes a multi-stage Dockerfile for production.
+- **Kubernetes Ready**: Manifests for deployment and service.
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
+
+- Node.js 18+
+- npm
+
+### Installation
+
+```bash
+cd k8s-knowledge-hub
+npm install
+```
+
+### Development
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+The application will read from the local `knowledge-hub.md` by default.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Environment Variables
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- `MD_SOURCE`: Path to the Markdown file (local relative path or remote HTTPS URL). Defaults to `knowledge-hub.md`.
 
-## Learn More
+## Docker
 
-To learn more about Next.js, take a look at the following resources:
+To build the Docker image:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
+docker build -t knowledge-hub:latest .
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+To run the container:
 
-## Deploy on Vercel
+```bash
+docker run -p 3000:3000 knowledge-hub:latest
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Kubernetes Deployment
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+The manifests are located in the `k8s/` directory.
+
+1. Update the image in `k8s/deployment.yaml`.
+2. Apply the manifests:
+
+```bash
+kubectl apply -f k8s/
+```
+
+## Markdown Format
+
+The application expects the Markdown file to follow this structure:
+
+```md
+# Category Name
+
+## SubCategory Name
+
+* Tags: tag1, tag2
+* Url: https://example.com
+* Name: Source Name
+* Title: Article Title
+* Description: Brief summary
+* My Thoughts: Personal perspective
+```
