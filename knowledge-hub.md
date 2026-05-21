@@ -105,3 +105,14 @@
 * Title: I was laid off by Atlassian
 * Description: Vasilios Syrakis reflects on an eight-year tenure as an engineer at Atlassian. The retrospective explores key technical projects built during that time, including load balancing infrastructure, API management systems, and proxy configurations, while sharing professional insights on software maintenance, career development, and interpersonal collaboration within large technology organizations.
 * My Thoughts: An amazing talk about a platform engineering team that created a great platform to provide to developers easy way to provision infrastructure for their applications.
+
+# AI
+
+## Security
+
+* Tags: security, ai, frontier-models, cloudflare, policy
+* Url: https://blog.cloudflare.com/cyber-frontier-models/
+* Name: Cloudflare
+* Title: Cyber frontier models
+* Description: Cloudflare presents a framework for evaluating the cybersecurity capabilities and risks of frontier AI models. The article outlines how increasingly capable models can affect offensive and defensive cyber operations, and argues for practical governance, risk-tiering, and safety controls to manage model deployment responsibly.
+* My Thoughts: While current AI models lack the sophistication of advanced threat actors, frontier models demonstrate enhanced capabilities in correlating minor vulnerabilities to construct complex, multi-stage attack chains. This article provides valuable insights into emerging threats. However, with defensive capabilities advancing alongside offensive tools, organizations should prioritize integrating AI-assisted analysis into their vulnerability management and patch processes.
