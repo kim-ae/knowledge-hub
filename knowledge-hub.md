@@ -94,3 +94,14 @@
 * Title: My uncompiled thoughts
 * Description: This is an amazing blog from a fellow developer whom I have the pleasure of work for some year now.
 * My Thoughts: Worth the reading.
+
+# Interesting videos
+
+## Infrastructure
+
+* Tags: infra, envoy, attlassian, platform, engineering
+* Url: https://www.youtube.com/watch?v=55pTFVoclvE
+* Name: Vasilios Syrakis
+* Title: I was laid off by Atlassian
+* Description: Vasilios Syrakis reflects on an eight-year tenure as an engineer at Atlassian. The retrospective explores key technical projects built during that time, including load balancing infrastructure, API management systems, and proxy configurations, while sharing professional insights on software maintenance, career development, and interpersonal collaboration within large technology organizations.
+* My Thoughts: An amazing talk about a platform engineering team that created a great platform to provide to developers easy way to provision infrastructure for their applications.
