@@ -1,6 +1,8 @@
 import { getKnowledgeHubData } from '@/lib/parser';
 import Shell from '@/components/Shell';
 
+export const dynamic = 'force-dynamic';
+
 export default async function Home() {
   // Use local file for development, can be replaced with a remote URL
   const source = process.env.MD_SOURCE || 'knowledge-hub.md';
