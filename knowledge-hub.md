@@ -90,7 +90,7 @@
 
 * Tags: tech, blog, thoughts
 * Url: https://my-uncompiled-thoughts.hashnode.dev
-* Name: My uncompiled thoughts
+* Name: Fernanda Silva
 * Title: My uncompiled thoughts
 * Description: This is an amazing blog from a fellow developer whom I have the pleasure of work for some year now.
 * My Thoughts: Worth the reading.

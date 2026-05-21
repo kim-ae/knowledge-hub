@@ -26,9 +26,11 @@ export interface KnowledgeHubData {
 
 export async function getKnowledgeHubData(source: string): Promise<KnowledgeHubData> {
   let content: string;
+  
+  console.log('[Knowledge Hub] Loading from source:', source);
 
   if (source.startsWith('http')) {
-    const response = await fetch(source);
+    const response = await fetch(source, { cache: 'no-store' });
     if (!response.ok) {
       throw new Error(`Failed to fetch from ${source}: ${response.statusText}`);
     }

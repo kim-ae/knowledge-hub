@@ -21,7 +21,7 @@ spec:
         - containerPort: 3000
         env:
         - name: MD_SOURCE
-          value: "https://raw.githubusercontent.com/user/repo/main/knowledge-hub.md"
+          value: "https://raw.githubusercontent.com/kim-ae/knowledge-hub/main/knowledge-hub.md"
         resources:
           limits:
             cpu: "500m"

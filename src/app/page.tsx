@@ -4,7 +4,7 @@ import Shell from '@/components/Shell';
 export default async function Home() {
   // Use local file for development, can be replaced with a remote URL
   const source = process.env.MD_SOURCE || 'knowledge-hub.md';
-  
+
   try {
     const data = await getKnowledgeHubData(source);
     return <Shell data={data} />;
@@ -18,7 +18,7 @@ export default async function Home() {
           <pre className="text-xs text-slate-500 bg-slate-50 p-4 rounded-lg overflow-x-auto text-left border border-slate-100 mb-6">
             {error instanceof Error ? error.message : 'Unknown error'}
           </pre>
-          <a 
+          <a
             href="/"
             className="inline-block px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors font-semibold"
           >
