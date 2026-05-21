@@ -26,7 +26,7 @@ export interface KnowledgeHubData {
 
 export async function getKnowledgeHubData(source: string): Promise<KnowledgeHubData> {
   let content: string;
-  
+
   console.log('[Knowledge Hub] Loading from source:', source);
 
   if (source.startsWith('http')) {
@@ -56,19 +56,29 @@ function parseMarkdown(content: string): KnowledgeHubData {
     const line = lines[i].trim();
 
     if (line.startsWith('# ')) {
+      // Push current article before switching categories
+      if (currentArticle && currentSubCategory) {
+        currentSubCategory.articles.push(currentArticle as Article);
+      }
       const title = line.replace('# ', '').trim();
       data[title] = { title, subCategories: {} };
       currentCategory = data[title];
       currentSubCategory = null;
+      currentArticle = null;
     } else if (line.startsWith('## ')) {
       if (!currentCategory) continue;
+      // Push current article before switching subcategories
+      if (currentArticle && currentSubCategory) {
+        currentSubCategory.articles.push(currentArticle as Article);
+      }
       const title = line.replace('## ', '').trim();
       currentCategory.subCategories[title] = { title, articles: [] };
       currentSubCategory = currentCategory.subCategories[title];
+      currentArticle = null;
     } else if (line.startsWith('* ')) {
       // This is a property or the start of a new article
       const propertyMatch = line.match(/^\*\s+([^:]+):\s*(.*)$/);
-      
+
       if (propertyMatch) {
         const [, key, value] = propertyMatch;
         const normalizedKey = key.trim().toLowerCase();
